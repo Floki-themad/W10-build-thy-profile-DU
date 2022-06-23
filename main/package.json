@@ -6,10 +6,10 @@
   "directories": {
     "lib": "lib",
     "test": "test"
-  },
+    },
   "scripts": {
     "test": "jest --verbose test/*",
-    "srart": "node index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
