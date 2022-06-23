@@ -10,3 +10,17 @@ const internStyle = require('./src/InternStyle');
 const {profile} = require('console');
 let teamName ="";
 const teamArray =[];
+
+// start inquirer 
+
+// manager function
+
+//employee function
+
+//engineer function
+
+//intern function 
+
+//write page function 
+
+// init function 
