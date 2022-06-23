@@ -4,9 +4,9 @@ const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
 const makeHTMl = require('./src/template');
-const managerStyle = require('./src/InternStyle');
-const engineerStyle = require('./src/Engineerstyle');
-const internStyle = require('./src/InternStyle');
+const managerCard = require('./src/InternStyle');
+const engineerCard = require('./src/Engineerstyle');
+const internCard = require('./src/InternStyle');
 const { profile } = require('console');
 const Employee = require('./lib/Employee');
 let teamName = "";
@@ -125,3 +125,33 @@ const start = () => {
             })
     }
 }
+
+function writePage() {
+    fs.writeFile(`./team-profile.html`, makeHTMl(teamName, makeTeamCards()), function (err) { console.log(err) })
+}
+
+const makeTeamCards = () => {
+    let team = "";
+    teamArray.forEach((member) => {
+        switch (member.title) {
+            case `Manager`:
+                team += managerCard(member);
+                break;
+            case `Engineer`:
+                team += engineerCard(member);
+                break;
+            case `Intern`:
+                team += internCard(member);
+                break;
+            default:
+                break;
+        }
+    });
+    return team;
+}
+
+function init() {
+    start();
+}
+
+init();
